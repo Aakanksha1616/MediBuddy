@@ -1,0 +1,107 @@
+h3 {
+    color: #fff;
+    padding-top: 10px;
+}
+
+.d-flex {
+    justify-content: center;
+
+}
+
+img {
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+
+.search-section {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.action-container-layout.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 60%;
+    max-width: 900px;
+}
+
+.input-group-search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-pincode,
+.search-medicines {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 150px;
+}
+
+.search-pincode {
+    width: 120px;
+}
+
+.search-medicines {
+    flex-grow: 1;
+    
+}
+
+.search-button {
+    padding: 10px 20px;
+    color: #4285F8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-button .search-icon {
+    margin-right: 5px;
+}
+
+.img{
+    margin:auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#carouselExampleControls{
+ margin: 0 auto;
+ text-align: center;
+ display: flex;
+ display: grid; justify-content: center;
+ 
+}
+
+.input-group{
+    height: 50px;
+}
+
+.city-lable{
+    font-weight: 600;
+}
+
+.list-group{
+   width: 75%;
+}
+
+  

@@ -1,0 +1,23 @@
+<div class="container w-100" routerLink="/top-deals-productBy-categories">
+  <h4 class="mt-4" style="color: #262C67; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 700;">Top Deals</h4>
+  <a class="cursor" style="color: #4285F8; float:right; text-decoration: none;">View All</a>
+</div>
+<br>
+<br>
+<div class="container">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let product of topDeals">
+      <ng-template carouselSlide [id]="product.id">
+        <div class="card" style="width: 16rem; border-radius: 20px; box-shadow: 0 0 5px rgba(24, 24, 24, .161);">
+          <img [src]="product.productImageSlug[0]" class="card-img-top" alt="..." [title]="product.description" height="180" width="200"  routerLink="/product-details/{{product.drugCode}}" >
+          <div class="card-body">
+            <h5 class="card-title text-desc fs-6" style="font-size: 20px; color: #262C67; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 700;">{{product.description}}</h5>
+            <p class="card-text light-bold" style="color: gray;">{{product.type}}</p>
+          </div>
+          <p><span class="ms-3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  color: #262C67;  font-weight: 400;">MRP&nbsp;<span class="text-decoration-line-through">₹ {{product.actualPrice}}</span></span></p>
+          <p class="ms-3">₹<span class="ms-1" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  color: #262C67; font-weight: 700;">{{product.discountPrice}}</span><a class="border btn btn-light cursor border border-primary" style="float:right;  border-radius: 20px;" (click)=" addProductToCart(product)">ADD</a></p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>

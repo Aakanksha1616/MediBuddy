@@ -1,1 +1,40 @@
-<h6>header component</h6>
+<nav class="header">
+    <a href="#"><img src="https://www.medibuddy.in/assets/logos/medibuddyWithName.svg" height="40" width="160"></a>
+    <div class="navbar">
+       <a><img src="../../../../assets/Images/Add to cart.svg" height="25px" alt="cart" style="cursor: pointer;"><span class="cart-count rounded-circle" routerLink="/cart">{{count}}</span></a> 
+        <a>About Us</a>
+        <a data-bs-toggle="modal" data-bs-target="#modal" *ngIf="!isLoggedInUser">Login</a>
+        <div>
+        <a class="nav-link dropdown-toggle" *ngIf="isLoggedInUser" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{userDetails?.name}}
+        </a>
+        <ul class="dropdown-menu" style="margin-left: 150px;" >
+          <li class="dropdown-item">My Profile</li>
+          <li class="dropdown-item">My Orders</li>
+          <li class="dropdown-item" (click)="logout()">LogOut</li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content  mb-3"style="border-radius: 24px; width: 400px;">
+        <button type="button" id="closeBtn" class="btn" data-bs-dismiss="modal" style="margin-left: auto;">Close</button>
+        <div class="modal-body">
+            <!-- <app-login *ngIf="action =='login'" (emitAction)="getAction($event)"></app-login> -->
+            <app-login *ngIf="action == 'login'" (emitAction)="getAction($event)"></app-login>
+            <app-sign-up *ngIf="action =='signup'"></app-sign-up>
+            <br>
+            <button type="submit" class="btn" style="background-color: #aaa;" *ngIf="action == 'login'" (click)=" changeAction('signup')">SignUp</button>
+            <button type="submit" class="btn" style="background-color: #aaa;" *ngIf="action == 'signup'" (click)=" changeAction('login')">Login</button>
+            <br>
+            <br>
+            <a class="coperet pt-2 cursor" style="justify-content: center; display: flex; text-decoration: none;">I have a Corporate Account</a>
+            <p style="justify-content: center; display: flex; font-size: small;">By signing in you agree to our</p>
+            <a href="#" style="justify-content: center; display: flex; text-decoration: none; font-size: medium; margin-top: auto; padding-top: 2px;">Terms and Condition &nbsp;<p>and&nbsp;</p>Privacy Policy</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>

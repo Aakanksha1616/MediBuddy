@@ -1,0 +1,33 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 100;
+    font-size: 13px;
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #1778F2;
+    margin-left: 40px;
+    font-weight: 500;
+}
+
+
+.rounded-circle{
+    position:relative;
+    background: #ff1414;
+    color: white;
+    left: -15px;
+    top: -1px;
+    width: 30px;
+    font-size: 15px;
+    text-align: center;
+}
