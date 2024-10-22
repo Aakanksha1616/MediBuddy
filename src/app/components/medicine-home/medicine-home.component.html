@@ -1,0 +1,99 @@
+
+
+<div class="container-fluid mt-5 p-2 bg-primary py-4 text-center text-light">
+    <h3>Get Huge Savings on Medicines</h3>
+    <div class="d-flex">
+        <img src="../../../assets/Images/check-tick.svg" class="m-r-10" height="15" width="15">
+        <div class="p-3">100 % Genuine Medicines</div>
+        <img src="../../../assets/Images/check-tick.svg" height="15" width="15">
+        <div class="p-3">Trusted Pharmacies</div>
+        <img src="../../../assets/Images/check-tick.svg" height="15" width="15">
+        <div class="p-3">Delivery to your doorstep</div>
+        <img src="../../../assets/Images/check-tick.svg" height="15" width="15">
+        <div class="p-3">Store Pick up</div>
+    </div>
+</div>
+<!--  -->
+
+<div class="container p-3 w-75">
+    <div class="input-group mb-3 shadow-sm">
+        <span class="input-group-text" id="basic-addon1">{{city}} {{pincode}} &nbsp;<i class="bi bi-chevron-down"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+        <input type="text" class="form-control" placeholder="Search Medicines" name="search" [(ngModel)]="searchText"
+            (ngModelChange)="searchProducts()">
+        <span class="input-group-text bg-light p-3"> <i class="bi bi-search mx-2 text-primary fw-bold"></i> <a
+                class="mx-2 text-decoration-none">Search</a></span>
+    </div>
+    <ul class="list-group m-auto search-box" *ngIf="medicines.length >0">
+        <li class="list-group-item cursor" *ngFor="let item of medicines">{{item.name}}</li>
+    </ul>
+
+</div>
+
+<div class="modal" tabindex="-1" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered w-50" >
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="text-center mb-0">Set Your Location</h5>
+                <div class="mb-3 mt-3">
+                    <label for="id2" class="form-label ms-2 city-lable">pincode</label>
+                    <input type="text" class="form-control" id="id2" name="pCode" [(ngModel)]="pincode" (ngModelChange)="searchCityByPincode()">
+                    <label class="form-label ms-2 city-lable">{{city}}</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container img w-75">
+    <img src="../../../assets/Images/medicine-page.webp" width="100%">
+</div>
+
+
+<!--  -->
+<div class="container w-75">
+    <div id="carouselExampleControls" class="carousel slide mt-3 pt-2" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.medibuddy.in/assets/banners/otcStore.webp" width="500px" height="160px" alt="img">
+                <img src="https://www.medibuddy.in/assets/banners/upkarnaWeb.png" width="500px" height="160px"
+                    alt="img">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.medibuddy.in/assets/offers/CallOffer.png" width="500px" height="160px" alt="img">
+                <img src="https://www.medibuddy.in/assets/offers/discount-home-delivered.png" width="500px"
+                    height="160px" alt="img">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!--  -->
+
+
+
+<!--  -->
+<br>
+<br>
+<div class="container w-75 m-auto">
+    <app-top-deals></app-top-deals>
+</div>
+
+

@@ -1,0 +1,44 @@
+<div class="container-fluid mt-5 p-4" style="background-color: #4285f4;">
+    <a style="color: #FFFF; font-weight: 700; text-decoration: none; font-size:20px;" routerLink="/medicine-home">Top Deals</a>
+  </div>
+  
+  <div class="container-fluid p-2" style="background-color: #F1F7FE;">
+    <p>Showing Medicine Availability and Price in &nbsp;<img src="../../../assets/Images/location Icon.svg">&nbsp;<a
+        class="cursor" style="cursor: pointer;"></a><span class="text-decoration-none text-primary">{{pinCodeDetails?.pincode}},{{pinCodeDetails?.pincodeCity}}</span></p>
+  
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container border w-75" *ngIf="products?.length">
+    <div class="row"  *ngFor="let product of products">
+        <div class="col-md-6">
+            <img [src]="product?.productImageSlug"  height="200" width="250">
+        </div>
+        <div class="col-md-6">
+            <p><strong>Description : </strong>{{ product?.description }}</p>
+            <p><strong>Price : </strong>{{ product?.actualPrice }}</p>
+            <p><strong>Discount Price : </strong>{{ product?.discountPrice }}</p>
+            <p><strong>Availability : </strong>{{ product?.availability }}</p>
+            <p><strong>Composition : </strong>{{ product?.composition }}</p>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+<!-- <div class="container border w-75" *ngIf="products?.length">
+  <div class="row" *ngFor="let product of products">
+    <div class="col-md-6">
+      <img [src]="product?.productImageSlug" height="180" width="200">
+    </div>
+    <div class="col-md-6">
+      <p>Description: {{ product?.description }}</p>
+      <p>Price: {{ product?.actualPrice }}</p>
+      <p>Discount Price: {{ product?.discountPrice }}</p>
+      <p>Availability: {{ product?.availability }}</p>
+      <p>Composition: {{ product?.composition }}</p>
+    </div>
+  </div>
+</div> -->
+
